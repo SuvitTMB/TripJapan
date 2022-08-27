@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+  <link href="./img/favicom.ico" rel="icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/vdo.css' rel="stylesheet" type="text/css">
+  <link href='css/radio.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background: #fff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="ba-trip.html" style="font-size:12px;">LINE Retail Society</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="Loading" class="carousel slide text-center" data-ride="carousel" style="display: block;">
+    <div style="margin:200px auto;" id="loading"><img src="./img/loading.gif">
+      <div style="padding-top:15px;color:#f68b1f;">L o a d i n g</div>
+    </div>
+  </div>
+
+
+  <session id="StopApp" style="display: none;">
+    <div class="row">
+      <center>
+        <div class="font-4h" style="padding:70px 0px 10px 0px;">
+          <div class="font-4h" style="font-size: 15px; color:#0056ff;"></div>
+        </div>
+        <div style="margin-top:20px;"><img src="./img/stop.png" style="max-width: 280px"></div>
+        <div style="margin-top:30px; width:90%">
+          <div class="text-home" style="color:#002d63;">คุณไม่ได้รับสิทธิ์</div>
+          <div class="text-home"><b>ในการตอบแบบสอบถามนี้</b></div>
+        </div>
+      </center>
+    </div>
+  </session>
+
+
+  <session id="WelcomeTrip" style="display: none;">
+    <div class="container" style="max-width:360px; margin:60px auto 10px auto;">
+      <div><img src="./img/survey-trip.png" style="width:100%;"></div>
+      <center>
+        <div style="margin-top:10px; color:#000000; font-size: 12px;margin-top:20px;font-weight: 400;">
+          <ul style="text-align: left;margin-left: -20px;">
+            <li>การโหวตนี้จะนับสิทธิ์เกิน 144 เสียง (กึ่งหนึ่งของคนที่ยืนยันตอบรับไปญี่ปุ่น) จะเลือกข้อนั้น </li>
+            <li>ผู้ที่มีสิทธิ์โหวต ได้แก่ ผู้ที่ยืนยันตอบรับไปญี่ปุ่นจำนวน 288 คนเท่านั้น (Invitee ไม่มีสิทธิ์โหวต) </li>
+            <li>ผู้ที่มีสิทธิ์โหวตสามารถทำการตอบแบบสำรวจได้เพียงครั้งเดียวและจะไม่สามารถเปลี่ยนแปลงคำตอบได้อีก ขอให้ทำการตัดสินใจก่อนทำแบบสำรวจทริปนี้</li>
+          </ul>
+        </div>
+        <div style="color:#fff; font-size: 11px;margin-top:20px;font-weight: 400; background-color: #f58e26;padding:10px;border-radius: 10px;">
+          ผู้ได้สิทธิ์สามารถทำการตอบแบบสำรวจได้เพียงครั้งเดียว<br>และจะไม่สามารถเปลี่ยนแปลงได้อีก<br>
+          ขอให้ทำการตัดสินใจก่อนเข้าทำแบบสำรวจทริปนี้<br>กรุณาตอบแบบสำรวจภายใน 29 – 31 ส.ค. 65 
+        </div>
+        <div class="btn-t1" style="margin-top:20px;" onclick="CheckTripPrudential()">ตอบแบบสำรวจทริปของคุณ</div>
+      </center>
+    </div>
+  </session>
+
+
+  <session id="ShowTrip" style="display: none;">
+    <div class="container" style="max-width:360px; margin:60px auto 10px auto;">
+      <div style="margin-top:30px; text-align: center;">
+        <div id="MyProfile"></div>
+      </div>
+      <center>
+        <div class="btn-t9" style="background-color: #444; margin-top:20px;cursor: none;font-size: 12px;padding:6px 40px;line-height: 1.3;">กรุณาตอบแบบสำรวจทริป</div>
+      </center>
+
+
+      <div style="margin-top:20px;">
+        <label class="radio-button">
+          <input type="radio" name="SendAnswer" value="3" onclick="buttonRemove()" style="height: 70px;">
+          <span class="label-visible"><span class="fake-radiobutton"></span><font color="#ff0000"><u>ยืนยันไม่เข้าร่วมทริปและขอรับรางวัลเป็นเงินสด 100%</u></font></span>
+        </label>
+      </div>
+      <div class="btn-t2" style="margin-top:-30px;font-size:11px;margin-left:44px;background-color: #ff0000;border: 1px solid #fff;letter-spacing: 0px;" onClick="showHideDiv('divMsg1')"/>ดูรายละเอียดและเงื่อนไขเพิ่มเติม</div>
+      <div class="text-trip" id="divMsg1" style="font-size: 11px; color:#002d63;display: none;margin-top:20px;">
+        <ul style="margin-left:-30px;">
+          <li>ผู้ได้รับรางวัลจะได้รับเป็นเงินสด 100% ของมูลค่าทริปตั้งแต่ที่นั่งแรก (50,000 บาท)</li>
+          <li>เงินรางวัลจะโอนเข้าบัญชีพนักงานในรอบเดือนพฤศจิกายน 2565</li>
+          <li>พรูเด็นเชียลประกันชีวิตจะเป็นผู้รับผิดชอบภาษีเงินได้ ตามฐานเงินเดือนของพนักงาน</li>
+          <li>กรณียืนยันการรับเป็นเงินสด 100% แล้ว จะไม่สามารถเปลี่ยนแปลงขอเข้าร่วมเดินทางได้ในภายหลังทุกกรณี</li>
+        </ul>
+      </div>
+
+
+      <div style="margin-top:20px;">
+        <label class="radio-button">
+          <input type="radio" name="SendAnswer" value="1" onclick="buttonRemove()">
+          <span class="label-visible"><span class="fake-radiobutton"></span><font color="#0ac71a"><u>ยืนยันเข้าร่วมทริป ฮอกไกโด</u></font></span>
+        </label>
+      </div>
+      <div class="btn-t2" id="btnOK" style="margin-top:-30px;font-size:11px;margin-left:44px;background-color: #0ac71a;border: 1px solid #fff;letter-spacing: 0px;" onClick="showHideDiv('divMsg')"/>ดูรายละเอียดและเงื่อนไขเพิ่มเติม</div>
+      <div class="text-trip" id="divMsg" style="font-size: 11px; color:#002d63;margin-top:20px;display:none;">
+        <ul style="margin-left:-30px;">
+          <li>ทริปท่องเที่ยวประเทศญี่ปุ่น จำนวน 5 วัน 3 คืน กำหนดเดินทางช่วงเดือนมกราคม - กุมภาพันธ์ 2566 โดยเมืองที่ไปคือ ฮอกไกโด (โดยจะมีการประกวดราคาบริษัททัวร์ใหม่อีกครั้ง) ทั้งนี้ยึดประโยชน์ของผู้เดินทางเป็นปัจจัยสูงสุด โดยการจัดได้ จะยึดจาก Conditionขั้นต่ำ ดังต่อไปนี้ direct flight, 5 วัน 3 คืน โรงแรม 3 ดาวขึ้นไป อาหารทุกมื้อ  ( หากหลังจากนั้นยังจัดไม่ได้ภายใต้ condition และระยะเวลาดังกล่าว  ขอสงวนสิทธิ์ยกเลิกการจัดทริป และทุกท่านจะได้รับเป็นเงินสด 100% (50,000 บาท)</li>
+          <li>ผู้ได้รับรางวัลต้องคงสภาพการเป็นพนักงาน ttb จนถึงวันเดินทาง</li>
+          <li>พรูเด็นเชียลประกันชีวิตจะเป็นผู้รับผิดชอบภาษีเงินได้ ตามฐานเงินเดือนของพนักงาน</li>
+          <li>กรณียืนยันการเดินทางแล้ว จะไม่สามารถเปลี่ยนแปลงขอรับเป็นเงินสดได้ในภายหลังทุกกรณี</li>
+          <li>ภายหลังยืนยันการเข้าร่วมแล้ว กรณีไม่สามารถเดินทางได้เนื่องจากเหตุสุดวิสัยในช่วงก่อนเดินทาง เช่น ติดโควิด-19 , ติดภารกิจสำคัญ , ตั้งครรภ์ ขอสงวนสิทธิ์การเปลี่ยนแปลงก่อนการเดินทาง โดยจะไม่สามารถรับเงินคืนเป็นเงินสดและไม่สามารถเปลี่ยนผู้เดินทางได้</li>
+        </ul>
+      </div>
+
+
+<!--
+      <div style="margin-top:20px;">
+        <label class="radio-button">
+          <input type="radio" name="SendAnswer" value="2" onclick="buttonRemove()">
+          <span class="label-visible"><span class="fake-radiobutton"></span><font color="#002d63"><u>ยืนยันเข้าร่วมทริปและขอเปลี่ยนแปลงชื่อผู้เดินทาง</u></font></span>
+        </label>
+      </div>
+      <div class="btn-t2" style="margin-top:-30px;font-size:11px;margin-left:44px;background-color: #002d63;border: 1px solid #fff;" onClick="showHideDiv('divMsg2')"/>ดูรายละเอียดและเงื่อนไขเพิ่มเติม</div>
+      <div class="text-trip" id="divMsg2" style="font-size: 11px; color:#002d63;display: none;margin-top:20px;">
+        <ul style="margin-left:-30px;">
+          <li>ขอให้ดำเนินการส่งอีเมลแจ้งความประสงค์ไปยัง ZH และ RH ตามลำดับ เมื่อได้รับอนุมัติแล้ว ส่งเรื่องมาที่อีเมล supattra.kan@ttbbank.com (คุณสุพัตรา กาญจนวีรวิทย์ รหัสพนักงาน 25718) ภายในวันที่ 05 เม.ย. 65</li>
+          <li>ผู้ที่เดินทางแทน จะต้องเป็นพนักงาน ttb เท่านั้น และจะต้องคงสภาพการเป็นพนักงาน ttb จนถึงวันเดินทาง</li>
+          <li>กรณีเปลี่ยนแปลงชื่อผู้เดินทางแล้ว จะไม่สามารถเปลี่ยนแปลงได้อีกในภายหลังทุกกรณี</li>
+          <li>คำตัดสินของผู้บริหาร BBD และ Prudential ถือเป็นที่สิ้นสุด</li>
+        </ul>
+      </div>
+-->
+    </div>
+
+
+    <center>
+      <div class="btn-t0" style="margin-top:30px;" onclick="SendAnswer()" id="SendAns">คลิกยืนยันการตัดสินใจ</div>
+      <div style="margin:10px auto; color:#ff0000; font-size: 11px;font-weight: 400;">ให้คลิกเลือกรายการที่ต้องการ และกดยืนยันการตัดสินใจ</div>
+      <!--
+      <div class="EndSelect" style="width:300px; margin:15px auto;">กรณีท่านที่ไม่ได้ตอบแบบสำรวจภายในระยะเวลาที่กำหนด ถือว่าประสงค์ที่จะขอรับเป็นเงินสด 80% และพรูเด็นเชียลประกันชีวิตจะเป็นผู้รับผิดชอบภาษีเงินได้ ตามฐานเงินเดือนของพนักงาน</div>
+    -->
+    </center>
+  </session>
+
+
+
+  <session id="ShowResult" style="display: none;">
+    <div class="container" style="max-width:340px; margin:60px auto 10px auto;">
+      <div style="margin-top:30px; text-align: center;">
+        <div id="MyProfile1"></div>
+        <div id="DisplayResultTrip"></div>
+      </div>
+    </div>
+  </session>
+
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+  <div style="font-size:12px;font-weight: 600;margin-top:-10px;">
+    @<font color="#0ac71a">LINE</font> <font color="#002d63">Retail</font> 
+    <font color="#0056ff">So</font><font color="#f68b1f">ciety</font>
+  </div>
+</footer>
+
+
+<div id="id01" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;max-width:400px;margin:auto;">
+      <div>
+        <center>
+          <!--<div class="text-4heart1" style="padding:30px 40px 20px 40px; color:#0056ff;">ยืนยันรายการของคุณ</div>-->
+          <div id="DisplayResult"></div>
+        </center>
+      </div>
+      <center>
+        <div class="btn-t2" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>
+      </center>
+    </div>
+  </div>
+  <div class="clr" style="height: 30px;"></div>
+</div>
+
+
+<script src="./js/book-trip.js"></script>
+
+
+</body>
+</html>

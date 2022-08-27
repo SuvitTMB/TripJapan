@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+  <link href="./img/favicom.ico" rel="icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/vdo.css' rel="stylesheet" type="text/css">
+  <link href='css/radio.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <style>
+    table {
+      font-family: ekachon-regular, sans-serif;
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      width: 80%;
+      table-layout: fixed; margin:auto;
+    }
+
+    table caption {
+      font-size: 12px;
+      margin: .5em 0 .75em;
+    }
+
+    table tr {
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: .35em;
+    }
+
+    table th,
+    table td {
+      font-size: 12px;
+      padding: 6px;
+      text-align: center;
+    }
+
+    table th {
+      font-size: 12px;
+      color:#f68b1f;
+    }    
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background: #fff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="ba-trip.html" style="font-size:12px;">LINE Retail Society</a>
+      </div>
+    </div>
+  </nav>
+
+  <section style="margin-top:80px;">
+    <table>
+      <caption style="margin:auto; font-weight: 600; color:#0056ff;">แบบสำรวจทริปฮอกไกโด</caption>
+      <thead>
+        <tr>
+          <th scope="col">รายการ</th>
+          <th scope="col">จำนวน</th>
+          <th scope="col">%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Account">แจ้งยืนยัน</td>
+          <td data-label="Due Date" id="Confirm"></td>
+          <td data-label="Amount" id="RConfirm"></td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">ขอยกเลิก</td>
+          <td data-label="Due Date" id="Cancel"></td>
+          <td data-label="Amount" id="RCancel"></td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">ยังไม่เลือก</td>
+          <td data-label="Due Date" id="NotReply"></td>
+          <td data-label="Amount" id="RNotReply"></td>
+        </tr>
+        <tr>
+          <td scope="row" data-label="Account">รวม</td>
+          <td data-label="Due Date" id="Sumall"></td>
+          <td data-label="Amount" id="RSumall"></td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </section>
+
+
+<script src="./js/check.js"></script>
+
+
+</body>
+</html>
