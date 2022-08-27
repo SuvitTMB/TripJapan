@@ -34,14 +34,6 @@ function CheckTrip() {
 	xConfirm = 0;
 	xCancel = 0;
 	xNotReply = 0;
-    $("#Confirm").html("");
-    $("#Cancel").html("");
-    $("#NotReply").html("");
-    $("#Sumall").html("");
-    $("#RConfirm").html("");
-    $("#RCancel").html("");
-    $("#RNotReply").html("");
-    $("#RSumall").html("");
 
   dbTripPrudential
   .orderBy('ConfirmTrip','asc')
@@ -56,6 +48,14 @@ function CheckTrip() {
     		xNotReply = xNotReply+1
     	}
     });
+    $("#Confirm").html("");
+    $("#Cancel").html("");
+    $("#NotReply").html("");
+    $("#Sumall").html("");
+    $("#RConfirm").html("");
+    $("#RCancel").html("");
+    $("#RNotReply").html("");
+    $("#RSumall").html("");
     var rConfirm = (xConfirm*100)/xSumall;
     var rCancel = (xCancel*100)/xSumall;
     var rNotReply = (xNotReply*100)/xSumall;
