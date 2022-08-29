@@ -262,14 +262,12 @@ input[type="radio"]:checked + label:after {
     margin-top:10px;
     border-radius: 25px;
     transition: all .3s;
-    border: solid #000 1px;
+    border: solid #f68b1f 1px;
     padding: 5px 25px;
     background-color: #f68b1f;
-    border-color: #f68b1f;    
     color: #ffffff;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
-    min-width:120px;
 }
 
 .btn-t2:focus, .btn-t2:hover, a.btn-t2:focus, a.btn-t2:hover {
@@ -538,8 +536,8 @@ input[type="radio"]:checked + label:after {
     transition: all .3s;
     border: solid #000 1px;
     padding: 15px 50px;
-    background-color: #0ac71a;
-    border-color: #0ac71a;    
+    background-color: #0056ff;
+    border-color: #fff;    
     color: #fff;
     font-size: 12px;
     min-width:220px !important;
